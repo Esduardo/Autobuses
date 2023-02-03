@@ -44,34 +44,34 @@ function FormRegister() {
     return (
         <form className="formulario" ref={form}>
     
-                <h1>Registrate</h1>
+            <h1>Registrate</h1>
             <div className="contenedor">
             
-            <div className="input-contenedor">
+                <div className="input-contenedor">
                 <i className="fas fa-user icon"></i>
-                <input type="text"name='nombre' placeholder="Nombre"/>
-                </div>
+                    <input type="text"name='nombre' placeholder="Nombre"/>
+                    </div>
 
-                <div className="input-contenedor">
-                <i className="fas fa-user icon"></i>
-                <input type="text" name='usuario' placeholder="usuario"/>
+                    <div className="input-contenedor">
+                    <i className="fas fa-user icon"></i>
+                    <input type="text" name='usuario' placeholder="usuario"/>
+                    </div>
+                    
+                    <div className="input-contenedor">
+                    <i className="fas fa-envelope icon"></i>
+                    <input type="text"name='correo' placeholder="Correo Electronico"/>
+                    
+                    </div>
+                    
+                    <div className="input-contenedor">
+                    <i className="fas fa-key icon"></i>
+                    <input type="password" name='contrasenia' placeholder="Contrasenia"/>
                 </div>
-                
-                <div className="input-contenedor">
-                <i className="fas fa-envelope icon"></i>
-                <input type="text"name='correo' placeholder="Correo Electronico"/>
-                
-                </div>
-                
-                <div className="input-contenedor">
-                <i className="fas fa-key icon"></i>
-                <input type="password" name='contrasenia' placeholder="Contrasenia"/>
-                </div>
-                <input type="button" onClick={handlerClick}  value="Registrarse"  class="button"/>
-                <Link to="/">salir</Link>
+                    <input type="button" onClick={handlerClick}  value="Registrarse"  class="button"/>
+                    <Link to="/">salir</Link>
             </div>
            
-    </form>
+        </form>
      );
 }
 
