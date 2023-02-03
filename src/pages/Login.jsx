@@ -1,23 +1,10 @@
-import Logo from "../assets/react.svg";
-
+import FormLogin from "../components/atoms/FormLogin";
 
 
 function Login() {
-    
-    
-    return (  
-        <div>
-           <div>
-           <img src={Logo} alt="logo de la empresa" />
-            <div>
-                
-            </div>
-           </div>
-            
-
-        </div>
-
-
+     return (  
+      <FormLogin> </FormLogin>
+      
     );
 }
 
