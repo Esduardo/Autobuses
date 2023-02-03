@@ -9,15 +9,16 @@ import { Link } from "react-router-dom";
 function FormLoginBus() {
 
     const navigate = useNavigate();
-    const Form = useRef();
+    const form = useRef();
     const endPoint = " http://34.225.239.102/api/autobus/register";
    
     const clickHandler = (e) => {
       e.preventDefault();
-      const newForm = new FormData(Form.current);
-      if(newForm.get("clave") === "" || newForm.get("placa") === "" || newForm.get("numasientos") === "" || newForm.get("fecha") === "" || newForm.get("tipo") === ""|| newForm.get("nombre") === ""){//el simbolo de pesos despues se nombra la variable
+      const newForm = new FormData(form.current);
+      if(newForm.get("clave") === "" || newForm.get("placa") === "" || newForm.get("numasientos") === "" || newForm.get("fecha") === "" || newForm.get("tipo") === ""|| newForm.get("nombre") === ""){
           alert("campos vacios");
-       }else{
+       }else {
+       alert("se agrego el autobus correctamente");
           
       const options = {
         method: "POST",
@@ -40,7 +41,7 @@ function FormLoginBus() {
         .then((data) => {
          
           if(data.status === true){
-              navigate("/Login");
+              navigate("/");
             }
         });
       }
@@ -52,39 +53,39 @@ function FormLoginBus() {
 
     return ( 
       
-            <form  className="formulario"> 
+            <form  className="formulario" ref={form}> 
             <h1>alta de autobus</h1>
                 <div className="contenedor">
                     <div className="input-contenedor">
-                        <label htmlFor="clave" className="h1">Clave autobus:</label> 
-                        <input type="text" name="clave" className="text" />
+                        <label htmlFor="clave">Clave autobus:</label> 
+                        <input type="text" name='clave'  />
                     </div>
                     <div className="input-contenedor">
-                        <label htmlFor="placa" className="h2">Placas autobus:</label>
-                         <input type="text" name="placa" className="text2" />
+                        <label htmlFor="placa">Placas autobus:</label>
+                         <input type="text" name='placa'  />
                     </div>
                     <div className="input-contenedor">
-                     <label htmlFor="numero" className="h3">Numero de asientos:</label> 
-                     <input type="text" name="numasientos" className="text3" />
+                     <label htmlFor="numero" >Numero de asientos:</label> 
+                     <input type="text" name='numasientos' />
                     </div>
                     <div className="input-contenedor"> 
-                        <label htmlFor="fecha" className="h4">Fecha de alta:</label> 
-                        <input type="text" name=" fecha" className="text4" />
+                        <label htmlFor="fecha" >Fecha de alta:</label> 
+                        <input type="text" name='fecha' />
                     </div>
                     <div className="input-contenedor"> 
-                        <label htmlFor="tipo" className="h5">Tipo:</label> 
-                        <input type="text" name="tipo" className="text5" />
+                        <label htmlFor="tipo" >Tipo:</label> 
+                        <input type="text" name='tipo' />
                     </div>
                     <div className="input-contenedor">
-                        <label htmlFor="nombre" className="h6">Nombre del chofer:</label> 
-                        <input type="text" name="nombre" className="text6" />
+                        <label htmlFor="nombre" >Nombre del chofer:</label> 
+                        <input type="text" name='nombre'  />
                     </div>                    
                     <div className="input-contenedor">
-                        <label htmlFor="licencia" className="h?">Numero de licencia:</label> 
-                        <input type="text" name=" licencia" className="text?" />
+                        <label htmlFor="licencia" >Numero de licencia:</label> 
+                        <input type="text" name='licencia' />
                     </div> 
                 </div >
-                <button type="button" className="button" onclick={clickHandler}>Alta de autobus</button> 
+                <button type="button" onClick={clickHandler} className="button" > Alta de autobus</button> 
                 <Link to="/">salir</Link>
                   
                     

@@ -1,24 +1,20 @@
 import '../../assets/styles/FormRegister.css'
 import { useRef } from 'react';
-import {useNavigate} from 'react-router-dom';
+
 import { Link } from "react-router-dom";
 
 
 function FormRegister() {
-    const navigate = useNavigate()
-    const name = useRef()
-    const username = useRef()
-    const password = useRef()
 
+    
     const form = useRef()
     const endpoint = 'http://34.225.239.102/api/registrar/usuario'
 
     const handlerClick = (e)=>{
         e.preventDefault();
-        //navigate("/home")
+        
         const newForm = new FormData(form.current)
-        //let newName = newForm.get('name')
-        //alert(`Nombre: ${newForm.get('name')} \nUsername: ${newForm.get('username')}`)
+
 
         const options = {
             method: 'POST',
