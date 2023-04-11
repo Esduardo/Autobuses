@@ -1,4 +1,4 @@
-import '../../assets/styles/FormRegister.css'
+// import '../../assets/styles/FormRegister.css'
 import { useRef } from 'react';
 
 import { Link } from "react-router-dom";
@@ -64,7 +64,7 @@ function FormRegister() {
                     <input type="password" name='contrasenia' placeholder="Contrasenia"/>
                 </div>
                     <input type="button" onClick={handlerClick}  value="Registrarse"  class="button"/>
-                    <Link to="/">salir</Link>
+                    <Link to="/login">salir</Link>
             </div>
            
         </form>
